@@ -1,0 +1,44 @@
+/* <!--selectors tells the browser which part of the web page to style--> */
+   *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #a0c0223c;
+   }
+    body{
+     font-family: Arial, Helvetica, sans-serif;
+     color: rgb(245, 4, 181);
+    }
+    h1,h2{
+     color: darkblue;
+     text-align: center;
+     margin-bottom: 20px;
+    }
+    p{
+     font-size: 16px;
+     line-height: 1.5;
+     margin-bottom: 10px;
+    }
+    .p1{
+     color: darkgreen;
+     font-weight: bold;
+    }
+      #p2{
+      color: darkred;
+      font-style: italic;
+      }
+      button{
+       background-color: coral;
+       color: white;
+       border: none;
+       padding: 10px 20px;
+       cursor: pointer;
+      }
+      .btn{
+       background-color: teal;
+      }
+      button:hover{
+         background-color: darkorange;
+         }
+
+/* <!--selectors tells the browser which part of the web page to style--> */

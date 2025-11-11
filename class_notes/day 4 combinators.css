@@ -1,0 +1,26 @@
+div p{
+    border: 2px solid purple;
+    font-style: italic;
+    font-family: cursive;
+}
+/* /this styles all p inside div no matter how deep even inside sub divs*/
+
+div > p{
+    border: 2px solid orange;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+}
+/* /this styles all p that are direct children of a div not sub ones */
+
+h1  + p{
+    border: 2px solid green;
+    background-color: lightgray;
+    padding: 5px;
+}
+/* /this styles the p that immediately follows an h1 */
+h2 ~ p{
+    border: 2px solid blue;
+    background-color: lightyellow;
+    padding: 5px;
+}
+/* /this styles all p that are siblings of an h2 */
