@@ -1,0 +1,15 @@
+div.inner{
+    border: 10px solid rgb(6, 140, 242);
+    margin: 20px;
+    padding: 10px;
+    background-color: blueviolet;
+    position: relative;
+}
+.box{
+    border: 10px solid rgb(0, 0, 255);
+    margin: 20px;
+    padding: 10px;
+    background-color: rgb(230, 66, 12);
+    box-sizing: content-box;
+    position: absolute;
+}
