@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Course Boxes</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 20px;
+      font-family: Arial, sans-serif;
+      background-color: #f0f0f0;
+    }
+
+    h1 {
+      text-align: center;
+      color: #333;
+      margin-bottom: 30px;
+    }
+
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .card {
+      width: 250px;
+      background-color: white;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 20px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+
+    .card.featured {
+      background-color: #e91c3b;
+      color: white;
+      border: none;
+    }
+
+    .card h2 {
+      font-size: 16px;
+      margin: 10px 0;
+      color: #333;
+    }
+
+    .card.featured h2 {
+      color: white;
+    }
+
+    .card p {
+      font-size: 13px;
+      color: #666;
+      margin: 8px 0;
+    }
+
+    .card.featured p {
+      color: #f0f0f0;
+    }
+
+    .card a {
+      color: #e91c3b;
+      text-decoration: none;
+      margin: 0 5px;
+      font-size: 12px;
+      font-weight: bold;
+    }
+
+    .card.featured a {
+      color: white;
+    }
+
+    .icon {
+      font-size: 30px;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Masai Course Boxes</h1>
+
+  <div class="container">
+    <div class="card">
+      <div class="icon">🎓</div>
+      <h2>EDGE: Essentials of Data Analytics</h2>
+      <p>6 months · Online</p>
+      <p><a href="#">Learn more</a> · <a href="#">Brochure</a></p>
+    </div>
+
+    <div class="card">
+      <div class="icon">🧭</div>
+      <h2>Product Management and Agentic AI</h2>
+      <p>3 months · Online</p>
+      <p><a href="#">Learn more</a> · <a href="#">Brochure</a></p>
+    </div>
+
+    <div class="card featured">
+      <div class="icon">⭐</div>
+      <h2>Certification Program in Data Analytics</h2>
+      <p>8 months · Online</p>
+      <p><a href="#">Learn more</a> · <a href="#">Brochure</a></p>
+    </div>
+
+    <div class="card">
+      <div class="icon">⚙️</div>
+      <h2>Product Management in the Agentic AI Era</h2>
+      <p>4 months · Online</p>
+      <p><a href="#">Learn more</a> · <a href="#">Brochure</a></p>
+    </div>
+
+    <div class="card">
+      <div class="icon">🔬</div>
+      <h2>Future-Ready Product Management</h2>
+      <p>5 months · Online</p>
+      <p><a href="#">Learn more</a> · <a href="#">Brochure</a></p>
+    </div>
+
+    <div class="card">
+      <div class="icon">🏫</div>
+      <h2>Online MBA</h2>
+      <p>12 months · Online</p>
+      <p><a href="#">Learn more</a> · <a href="#">Brochure</a></p>
+    </div>
+  </div>
+
+</body>
+</html>

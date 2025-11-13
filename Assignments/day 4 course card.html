@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<title>Masai Courses</title>
+
+<style>
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  font-family: Arial;
+  background:#f4f4f4;
+  padding:25px 15px;
+}
+
+h1{
+  text-align:center;
+  margin-bottom:25px;
+  font-size:22px;
+  color:#333;
+}
+
+.wrapper{
+  max-width:1100px;
+  margin:auto;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:18px;
+}
+
+.box{
+  background:#fff;
+  padding:18px;
+  border-radius:30px;
+  box-shadow:0 1px 5px rgba(0,0,0,0.15);
+  transition:0.2s;
+}
+
+.box:hover{
+  background:#ED0331;
+  transform:translateY(-4px);
+}
+
+.icon{
+  width:48px;
+  height:48px;
+  background:#eee;
+  border-radius:7px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  margin-bottom:10px;
+  font-size:28px;
+  overflow:hidden;
+}
+
+.icon img{
+  width:100%;
+  height:100%;
+  object-fit:contain;
+  padding:4px;
+}
+
+.college{
+  font-size:12px;
+  color:#777;
+  font-weight:bold;
+  margin-bottom:8px;
+  text-transform:uppercase;
+}
+
+.box h3{
+  font-size:17px;
+  color:#222;
+  margin-bottom:7px;
+}
+
+.time{
+  font-size:13px;
+  color:#666;
+  margin-bottom:5px;
+}
+
+.date{
+  font-size:11px;
+  color:#888;
+  margin-bottom:12px;
+}
+
+.btns{
+  display:flex;
+  gap:8px;
+  margin-top:auto;
+}
+
+.btn1{
+  background:#ED0331;
+  padding:8px 13px;
+  color:#fff;
+  border:none;
+  border-radius:18px;
+  font-size:12px;
+  cursor:pointer;
+}
+
+.btn2{
+  background:#fff;
+  padding:7px 12px;
+  color:#ED0331;
+  border:1px solid #ffc1b8;
+  border-radius:18px;
+  font-size:12px;
+  cursor:pointer;
+}
+
+.feature{
+  background:#ED0331;
+  color:#fff;
+}
+
+.feature .icon{
+  background:rgba(255,255,255,0.2);
+}
+
+.feature .college,
+.feature h3,
+.feature .time,
+.feature .date{
+  color:#fff;
+}
+
+.feature .btn2{
+  background:#fff;
+  color:#d53025;
+  border:none;
+}
+
+@media (max-width:500px){
+  h1{ font-size:19px; }
+}
+ .box:hover .btn1{
+    background-color: #fff;
+    color: #ED0331;
+ }
+ 
+  .box:hover .btn2{
+    background-color: #ED0331;
+    color: #fff;
+    border-radius: #ED0331;
+ }
+
+</style>
+</head>
+
+<body>
+
+<h1>Masai Courses</h1>
+
+<div class="wrapper">
+
+  <div class="box">
+      <div class="icon">
+        <img src="https://cdn.masaischool.com/masai-website/iim-sirmur-logo.png" alt="IIM Sirmaur">
+      </div>
+
+    <p class="college">IIM Sirmaur</p>
+    <h3>EDGE: Essentials of Data Analytics,Gen AI & Execution.</h3>
+    <p class="time">6 months | Online</p>
+    <p class="date">Qualifier Test: 12 Nov 2025</p>
+
+    <div class="btns">
+      <button class="btn1">Learn more</button>
+      <button class="btn2">Brochure -></button>
+    </div>
+  </div>
+
+
+  <div class="box">
+     <div class="icon">
+        <img src="	https://cdn.masaischool.com/masai-website/image219_ezgif_com_png_to_webp_converter_63f9568106.webp" alt="Vishvesvaraya Hub">
+      </div>
+
+    <p class="college">Vishvesvaraya Hub IIT patna</p>
+    <h3>Product Management & Agentic AI</h3>
+    <p class="time">6 months | Online</p>
+    <p class="date">Qualifier Test: 12 Nov 2025</p>
+
+    <div class="btns">
+      <button class="btn1">Learn more</button>
+      <button class="btn2">Brochure -></button>
+    </div>
+  </div>
+
+
+  <div class="box">
+      <div class="icon">
+        <img src="	https://cdn.masaischool.com/masai-website/image219_ezgif_com_png_to_webp_converter_63f9568106.webp" alt="Vishvesvaraya Hub">
+      </div>
+
+    <p class="college">Vishvesvaraya Hub IIT patna</p>
+    <h3>Certification Program in Data Analytics with gen &Agentic AI</h3>
+    <p class="time">6 months | Online</p>
+    <p class="date">Qualifier Test: 9 Nov 2025</p>
+
+    <div class="btns">
+      <button class="btn1">Learn more</button>
+      <button class="btn2">Brochure -></button>
+    </div>
+  </div>
+
+
+  <div class="box">
+     <div class="icon">
+        <img src="https://cdn.masaischool.com/masai-website/image219_ezgif_com_png_to_webp_converter_63f9568106.webp" alt="IIM Trichy">
+      </div>
+
+    <p class="college">IIM Trichy</p>
+    <h3>Product Management in Agentic Era</h3>
+    <p class="time">6 months | Online</p>
+    <p class="date">Qualifier: 12 Nov 2025</p>
+
+    <div class="btns">
+      <button class="btn1">Learn more</button>
+      <button class="btn2">Brochure -></button>
+    </div>
+  </div>
+
+
+  <div class="box">
+    <div class="icon">
+        <img src="https://cdn.masaischool.com/masai-website/image219_ezgif_com_png_to_webp_converter_63f9568106.webp" alt="Hub Dynasmart">
+      </div>
+
+    <p class="college">IHUB Divyasampark IIT patna</p>
+    <h3>Future-Ready Product Management with AI</h3>
+    <p class="time">6 months | Online</p>
+    <p class="date">Qualifier Test: 12 Nov 2025</p>
+
+    <div class="btns">
+      <button class="btn1">Learn more</button>
+      <button class="btn2">Brochure -></button>
+    </div>
+  </div>
+
+
+  <div class="box">
+   <div class="icon">
+        <img src="https://cdn.masaischool.com/masai-website/image219_ezgif_com_png_to_webp_converter_63f9568106.webp" alt="NMIMS CODE">
+      </div>
+
+    <p class="college">NMIMS CODE</p>
+    <h3>Online MBA</h3>
+    <p class="time">02 years | Online</p>
+    <p class="date">Qualifier Test: 12 Nov 2025</p>
+
+    <div class="btns">
+      <button class="btn1">Learn more</button>
+      <button class="btn2">Brochure -></button>
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>
