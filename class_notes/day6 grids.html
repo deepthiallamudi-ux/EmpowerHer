@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Course Boxes</title>
+  <style>
+.container {
+    display: grid;
+    width: 100%;
+    height: 100vh;
+    grid-template-columns: repeat(4,300px);
+    grid-template-rows: 150px 1fr ;
+    grid-template-areas: 
+        "header header"
+        "nav  main"
+        ".   footer";
+    }
+    .container > header {
+        grid-area: header;
+        background-color: lightcoral;
+        text-align: center;
+        padding: 1em;
+    }
+    .container > nav {
+        grid-area: nav;
+        background-color: lightblue;
+        padding: 1em;
+    }
+    .container > main {
+        grid-area: main;
+        background-color: lightgreen;
+        padding: 1em;
+    }
+    .container > footer {
+        grid-area: footer;
+        background-color: lightgray;
+        text-align: center;
+        padding: 1em;
+    }
+</style>
+</head>
+<body></body>
+<div class="container">
+    <header>Header</header>
+    <nav>Navigation</nav>
+    <main>Main Content</main>
+    <footer>Footer</footer>
+</div>
+</body>
+</html>
