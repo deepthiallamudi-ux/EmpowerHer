@@ -1,67 +1,161 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head> 
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Masai Founders & Investors</title>
         <style>
-            .box, .box1{
-                display:grid;
-                gap:10px;
-                }
 
+            body {
+                background-color: #f8f8f8;
+                padding: 40px 20px;
+            }
+            .box1, .box {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+                gap: 1px;
+                max-width: 80%;
+                margin: 0 auto;
+            }
+
+            .card {
+                background: white;
+                display: flex;
+                flex-direction: column;
+            }
+            .card > img:first-child {
+                width: 80%;
+                height: 270px;
+                object-fit: cover;
+            }
+
+            .card-content {
+                padding: 25px 20px;
+                flex-grow: 1;
+                display: flex;
+                flex-direction: column;
+            }
+
+            #name {
+                font-size: 20px;
+                font-weight: 600;
+                color: #1a1a1a;
+                text-align: center;
+            }
+
+            #tag {
+                font-size: 14px;
+                color: #666;
+                font-weight: 500;
+                text-align: center;
+            }
+
+            .logo-container {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .card img:last-child {
+                max-width: 100px;
+                max-height: 50px;
+                object-fit: contain;
+            }
+
+            
         </style>
     </head>
     <body>
         <div class="box1">
-                <div>
+            <div class="card">
                 <img src="https://cdn.masaischool.com/masai-website/Vijay_Shekhar_Sharma_Paytm_96f52579b8.jpg" alt="vijay shekar sarma">
-                <p id="name">Vijay Shekhar Sharma</p>
-                <p id="tag">Founder & CEO</p>
-                 <img src="https://cdn.masaischool.com/masai-website/paytm_rect_06df45a24f.svg" alt="paytm logo">
+                <div class="card-content">
+                    <p id="name">Vijay Shekhar Sharma</p>
+                    <p id="tag">Founder & CEO</p>
+                    <div class="logo-container">
+                        <img src="https://cdn.masaischool.com/masai-website/paytm_rect_06df45a24f.svg" alt="paytm logo">
+                    </div>
+                </div>
             </div>
-            <div>
-            <img src="https://cdn.masaischool.com/masai-website/Rectangle_427_637d69bb57.png" alt="Kunal shah">
-                <p id="name">Kunal Shah</p>
-                <p id="tag">Founder</p>
-                <img src="https://cdn.masaischool.com/masai-website/cred_0a47d7b4f8.png" alt="CRED logo">
-            </div>
-             <div>
-                <img src="https://cdn.masaischool.com/masai-website/amrish_rau_pine_labs_144e5e587c.jpg" alt="Amrish Rau">
-                <p id="name">Amrish Rau</p>
-                <p id="tag">CEO</p>
-                <img src="https://cdn.masaischool.com/masai-website/pine_labs_0aa2407434.png" alt="Pine Labs">
-            </div>
-             <div>
-                <img src="https://cdn.masaischool.com/masai-website/Sampad_swain_Instamojo_f12bf6341e.jpg" alt="Sampad Swain">
-                <p id="name">Sampad Swain</p>
-                <p id="tag">Co-FOunder & CEO</p>
-                <img src="https://cdn.masaischool.com/masai-website/instamojo_8763e704f7.png" alt="Instamojo">
-            </div>
-       
 
-            <div class="box">
-            <div>
+            <div class="card">
+                <img src="https://cdn.masaischool.com/masai-website/Rectangle_427_637d69bb57.png" alt="Kunal shah">
+                <div class="card-content">
+                    <p id="name">Kunal Shah</p>
+                    <p id="tag">Founder</p>
+                    <div class="logo-container">
+                        <img src="https://cdn.masaischool.com/masai-website/cred_0a47d7b4f8.png" alt="CRED logo">
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="https://cdn.masaischool.com/masai-website/amrish_rau_pine_labs_144e5e587c.jpg" alt="Amrish Rau">
+                <div class="card-content">
+                    <p id="name">Amrish Rau</p>
+                    <p id="tag">CEO</p>
+                    <div class="logo-container">
+                        <img src="https://cdn.masaischool.com/masai-website/pine_labs_0aa2407434.png" alt="Pine Labs">
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="https://cdn.masaischool.com/masai-website/Sampad_swain_Instamojo_f12bf6341e.jpg" alt="Sampad Swain">
+                <div class="card-content">
+                    <p id="name">Sampad Swain</p>
+                    <p id="tag">Co-Founder & CEO</p>
+                    <div class="logo-container">
+                        <img src="https://cdn.masaischool.com/masai-website/instamojo_8763e704f7.png" alt="Instamojo">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="box">
+            <div class="card">
                 <img src="https://cdn.masaischool.com/masai-website/Ankush_Sachdeva_Sharechat_4e44dbbe6b.jpg" alt="Ankush Sachdeva">
-                <p id="name">Ankush Schadeva</p>
-                <p id="tag">Co-founder & CEO</p>
-                <img src="https://cdn.masaischool.com/masai-website/sharechat_rect_73d95cd4e1.svg" alt="sharechat">
+                <div class="card-content">
+                    <p id="name">Ankush Sachdeva</p>
+                    <p id="tag">Co-founder & CEO</p>
+                    <div class="logo-container">
+                        <img src="https://cdn.masaischool.com/masai-website/sharechat_rect_73d95cd4e1.svg" alt="sharechat">
+                    </div>
+                </div>
             </div>
-             <div>
+
+            <div class="card">
                 <img src="https://cdn.masaischool.com/masai-website/bhanu_pratap_singh_sharechat_11fdd7b47a.jpg" alt="Bhanu Pratap Singh">
-                <p id="name">Bhanu Pratap Singh</p>
-                <p id="tag">Co-Founder & CTO</p>
-                <img src="https://cdn.masaischool.com/masai-website/sharechat_rect_73d95cd4e1.svg" alt="sharechat">
+                <div class="card-content">
+                    <p id="name">Bhanu Pratap Singh</p>
+                    <p id="tag">Co-Founder & CTO</p>
+                    <div class="logo-container">
+                        <img src="https://cdn.masaischool.com/masai-website/sharechat_rect_73d95cd4e1.svg" alt="sharechat">
+                    </div>
+                </div>
             </div>
-             <div>
-                <img src="https://cdn.masaischool.com/masai-website/farid_ahsan_sharechat_1251f28141.png" alt="Farid Ashan">
-                <p id="name">Farid Ashan</p>
-                <p id="tag">Co-founder & CEO</p>
-                <img src="https://cdn.masaischool.com/masai-website/sharechat_rect_73d95cd4e1.svg" alt="sharechat">
+
+            <div class="card">
+                <img src="https://cdn.masaischool.com/masai-website/farid_ahsan_sharechat_1251f28141.png" alt="Farid Ahsan">
+                <div class="card-content">
+                    <p id="name">Farid Ahsan</p>
+                    <p id="tag">Co-founder & COO</p>
+                    <div class="logo-container">
+                        <img src="https://cdn.masaischool.com/masai-website/sharechat_rect_73d95cd4e1.svg" alt="sharechat">
+                    </div>
+                </div>
             </div>
-             <div>
+
+            <div class="card">
                 <img src="https://cdn.masaischool.com/masai-website/Amit_Kumar_Agarwal_Nobroker_a8a279ad91.jpg" alt="Amit Kumar Agarwal">
-                <p id="name">Amit Kumar Agarwal</p>
-                <p id="tag">Founder & CEO</p>
-                <img src="https://cdn.masaischool.com/masai-website/nobroker_rect_28c9778c30.svg" alt="nobroker">
+                <div class="card-content">
+                    <p id="name">Amit Kumar Agarwal</p>
+                    <p id="tag">Founder & CEO</p>
+                    <div class="logo-container">
+                        <img src="https://cdn.masaischool.com/masai-website/nobroker_rect_28c9778c30.svg" alt="nobroker">
+                    </div>
+                </div>
             </div>
+        </div>
     </body>
 </html>
