@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weekly Schedule</title>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: linear-gradient(135deg, #fff8f3 0%, #fff0e6 100%);
+             font-family: fantasy;
+            padding: 40px 20px;
+            font-weight: 800px;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .title {
+            font-size: 52px;
+            font-weight: bolder;
+            font-family: 'Great Vibes';
+letter-spacing: 0.1ch;
+            color: #1a1a1a;
+        }
+
+        .schedule {
+            display: grid;
+            grid-template-columns: 80px repeat(5, 1fr);
+            grid-template-rows: auto repeat(9, 1fr);
+            gap: 12px;
+            grid-template-areas:
+                ". mon tue wed thu fri"
+                "h8 m8 t8 w8 th8 f8"
+                "h9 m9 t9 w9 th9 f9"
+                "h10 m10 t10 w10 th10 f10"
+                "h11 m11 t11 w11 th11 f11"
+                "h12 m12 t12 w12 th12 f12"
+                "h13 m13 t13 w13 th13 f13"
+                "h14 m14 t14 w14 th14 f14"
+                "h15 m15 t15 w15 th15 f15"
+                "h16 m16 t16 w16 th16 f16";
+        }
+
+        .time-header {
+            grid-area: time;
+        }
+
+        .day-header {
+            background: linear-gradient(135deg, #FFB3D9 0%, #FFD4E5 100%);
+            padding: 16px;
+            border-radius: 20px;
+            font-weight: 700;
+            color: #1a1a1a;
+            text-align: center;
+            font-size: 13px;
+            min-height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .day-header:nth-child(3),
+        .day-header:nth-child(5),
+        .day-header:nth-child(7) {
+            background: linear-gradient(135deg, #FFB3D9 0%, #FFD4E5 100%);
+        }
+
+        .day-header:nth-child(2),
+        .day-header:nth-child(4),
+        .day-header:nth-child(6) {
+            background: linear-gradient(135deg, #FFE680 0%, #FFFACD 100%);
+        }
+
+        .mon { grid-area: mon; }
+        .tue { grid-area: tue; }
+        .wed { grid-area: wed; }
+        .thu { grid-area: thu; }
+        .fri { grid-area: fri; }
+
+        .time-slot {
+            background: linear-gradient(135deg, #A8E6F0 0%, #7EDDD4 100%);
+            padding: 16px;
+            border-radius: 20px;
+            font-weight: 700;
+            color: #1a1a1a;
+            text-align: center;
+            font-size: 13px;
+            min-height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .h8 { grid-area: h8; }
+        .m8 { grid-area: m8; }
+        .t8 { grid-area: t8; }
+        .w8 { grid-area: w8; }
+        .th8 { grid-area: th8; }
+        .f8 { grid-area: f8; }
+
+        .h9 { grid-area: h9; }
+        .m9 { grid-area: m9; }
+        .t9 { grid-area: t9; }
+        .w9 { grid-area: w9; }
+        .th9 { grid-area: th9; }
+        .f9 { grid-area: f9; }
+
+        .h10 { grid-area: h10; }
+        .m10 { grid-area: m10; }
+        .t10 { grid-area: t10; }
+        .w10 { grid-area: w10; }
+        .th10 { grid-area: th10; }
+        .f10 { grid-area: f10; }
+
+        .h11 { grid-area: h11; }
+        .m11 { grid-area: m11; }
+        .t11 { grid-area: t11; }
+        .w11 { grid-area: w11; }
+        .th11 { grid-area: th11; }
+        .f11 { grid-area: f11; }
+
+        .h12 { grid-area: h12; }
+        .m12 { grid-area: m12; }
+        .t12 { grid-area: t12; }
+        .w12 { grid-area: w12; }
+        .th12 { grid-area: th12; }
+        .f12 { grid-area: f12; }
+
+        .h13 { grid-area: h13; }
+        .m13 { grid-area: m13; }
+        .t13 { grid-area: t13; }
+        .w13 { grid-area: w13; }
+        .th13 { grid-area: th13; }
+        .f13 { grid-area: f13; }
+
+        .h14 { grid-area: h14; }
+        .m14 { grid-area: m14; }
+        .t14 { grid-area: t14; }
+        .w14 { grid-area: w14; }
+        .th14 { grid-area: th14; }
+        .f14 { grid-area: f14; }
+
+        .h15 { grid-area: h15; }
+        .m15 { grid-area: m15; }
+        .t15 { grid-area: t15; }
+        .w15 { grid-area: w15; }
+        .th15 { grid-area: th15; }
+        .f15 { grid-area: f15; }
+
+        .h16 { grid-area: h16; }
+        .m16 { grid-area: m16; }
+        .t16 { grid-area: t16; }
+        .w16 { grid-area: w16; }
+        .th16 { grid-area: th16; }
+        .f16 { grid-area: f16; }
+
+        .schedule-cell {
+            background: linear-gradient(135deg, #FFB3D9 0%, #FFD4E5 100%);
+            padding: 12px;
+            border-radius: 16px;
+            min-height: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .schedule-cell:nth-child(2n) {
+            background: linear-gradient(135deg, #FFE680 0%, #FFFACD 100%);
+        }
+
+        .schedule-cell:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+        }
+
+        .note-section {
+            margin-top: 40px;
+        }
+
+        .note-label {
+            background: linear-gradient(135deg, #A8E6F0 0%, #7EDDD4 100%);
+            padding: 16px 24px;
+            border-radius: 20px;
+            font-weight: 700;
+            color: #1a1a1a;
+            font-size: 14px;
+            margin-bottom: 16px;
+        }
+
+        @media (max-width: 768px) {
+            .title {
+                font-size: 36px;
+            }
+
+            .schedule {
+                grid-template-columns: 70px repeat(5, 1fr);
+                gap: 8px;
+            }
+
+            .time-slot,
+            .day-header,
+            .schedule-cell {
+                padding: 12px 8px;
+                font-size: 12px;
+                min-height: 45px;
+                border-radius: 12px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .title {
+                font-size: 28px;
+            }
+
+            .schedule {
+                grid-template-columns: 60px repeat(5, 1fr);
+                gap: 6px;
+            }
+
+            .time-slot,
+            .day-header,
+            .schedule-cell {
+                padding: 10px 6px;
+                font-size: 11px;
+                min-height: 40px;
+                border-radius: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="title">Weekly schedule</div>
+        </div>
+
+        <div class="schedule">
+            <div class="day-header mon">Monday</div>
+            <div class="day-header tue">Tuesday</div>
+            <div class="day-header wed">Wednesday</div>
+            <div class="day-header thu">Thursday</div>
+            <div class="day-header fri">Friday</div>
+
+            <div class="time-slot h8">08:00</div>
+            <div class="schedule-cell m8"></div>
+            <div class="schedule-cell t8"></div>
+            <div class="schedule-cell w8"></div>
+            <div class="schedule-cell th8"></div>
+            <div class="schedule-cell f8"></div>
+
+            <div class="time-slot h9">09:00</div>
+            <div class="schedule-cell m9"></div>
+            <div class="schedule-cell t9"></div>
+            <div class="schedule-cell w9"></div>
+            <div class="schedule-cell th9"></div>
+            <div class="schedule-cell f9"></div>
+
+            <div class="time-slot h10">10:00</div>
+            <div class="schedule-cell m10"></div>
+            <div class="schedule-cell t10"></div>
+            <div class="schedule-cell w10"></div>
+            <div class="schedule-cell th10"></div>
+            <div class="schedule-cell f10"></div>
+
+            <div class="time-slot h11">11:00</div>
+            <div class="schedule-cell m11"></div>
+            <div class="schedule-cell t11"></div>
+            <div class="schedule-cell w11"></div>
+            <div class="schedule-cell th11"></div>
+            <div class="schedule-cell f11"></div>
+
+            <div class="time-slot h12">12:00</div>
+            <div class="schedule-cell m12"></div>
+            <div class="schedule-cell t12"></div>
+            <div class="schedule-cell w12"></div>
+            <div class="schedule-cell th12"></div>
+            <div class="schedule-cell f12"></div>
+
+            <div class="time-slot h13">13:00</div>
+            <div class="schedule-cell m13"></div>
+            <div class="schedule-cell t13"></div>
+            <div class="schedule-cell w13"></div>
+            <div class="schedule-cell th13"></div>
+            <div class="schedule-cell f13"></div>
+
+            <div class="time-slot h14">14:00</div>
+            <div class="schedule-cell m14"></div>
+            <div class="schedule-cell t14"></div>
+            <div class="schedule-cell w14"></div>
+            <div class="schedule-cell th14"></div>
+            <div class="schedule-cell f14"></div>
+
+            <div class="time-slot h15">15:00</div>
+            <div class="schedule-cell m15"></div>
+            <div class="schedule-cell t15"></div>
+            <div class="schedule-cell w15"></div>
+            <div class="schedule-cell th15"></div>
+            <div class="schedule-cell f15"></div>
+
+            <div class="time-slot h16">16:00</div>
+            <div class="schedule-cell m16"></div>
+            <div class="schedule-cell t16"></div>
+            <div class="schedule-cell w16"></div>
+            <div class="schedule-cell th16"></div>
+            <div class="schedule-cell f16"></div>
+        </div>
+
+        <div class="note-section">
+    </div>
+</body>
+</html>

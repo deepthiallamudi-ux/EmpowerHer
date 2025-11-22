@@ -1,4 +1,6 @@
-<!DOCTYPE html>
+
+
+   <!DOCTYPE html>
 <html lang="en">
     <head> 
         <meta charset="UTF-8">
@@ -12,10 +14,11 @@
             }
             .box1, .box {
                 display: grid;
-                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-                gap: 1px;
-                max-width: 80%;
+                grid-template-columns: repeat(4, 1fr);
+                gap: 20px;
+                max-width: 1400px;
                 margin: 0 auto;
+                width: 100%;
             }
 
             .card {
@@ -60,6 +63,30 @@
                 max-width: 100px;
                 max-height: 50px;
                 object-fit: contain;
+            }
+
+            @media (max-width: 1024px) {
+                .box1, .box {
+                    grid-template-columns: repeat(3, 1fr);
+                }
+            }
+
+            @media (max-width: 768px) {
+                .box1, .box {
+                    grid-template-columns: repeat(2, 1fr);
+                    gap: 15px;
+                }
+            }
+
+            @media (max-width: 480px) {
+                .box1, .box {
+                    grid-template-columns: 1fr;
+                    gap: 10px;
+                }
+
+                .card > img:first-child {
+                    height: 200px;
+                }
             }
         </style>
     </head>

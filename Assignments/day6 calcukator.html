@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head> 
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Masai Calculator</title>
+        <style>
+            body {
+                background-color: #f0f0f0;
+                padding: 40px 20px;
+                font-family: Arial, sans-serif;
+                justify-items: center;
+            }
+            .box1 {
+                max-width: 400px;
+                display: grid;
+                grid-template-columns: repeat(4, 1fr);
+                gap: 10px;
+                width: auto;
+                height: auto;
+                align-items: center;
+                padding: 20px;
+                background-color: #ffffff;
+                border-radius: 12px;
+            }
+     .title {
+                text-align: center;
+                font-size: 33px;
+                font-weight: bold;
+                margin-bottom: 40px;
+                color: #088a81; 
+            }
+            .result-box {
+                background-color: #eef3f2;
+                border-radius: 8px;
+                padding: 25px;
+                margin: 20px 10px 4px 10px;
+            }
+         .symbol {
+                background-color: #030303;
+                color: white;
+                padding: 20px;
+                text-align: center;
+                border-radius: 8px;
+                font-size: 10px;
+                width: 10px;
+            }  
+            .buttons {
+                background-color: red;
+                color: white;
+                padding: 20px;
+                text-align: center;
+                border-radius: 8px;
+                font-size: 10px;
+                font-style: italic;
+                font-family: fantasy;
+                width: 10px;
+            }  
+            .button {
+                background-color:whitesmoke;
+                color: rgb(7, 7, 7);
+                padding: 20px;
+                text-align: center;
+                border-radius: 8px;
+                font-size: 10px;
+                width: 10px;
+            }   
+            .box1 .result-box {
+                grid-column: span 4;
+            }
+            </style>
+    </head>
+    <body>
+        <h1 class="title">Masai Calculator</h1>
+        <div class="box1">
+            <div class="result-box"></div>
+            <div class="button">1</div>
+            <div class="button">2</div>
+            <div class="button">3</div>
+            <div class="symbol">+</div>
+            <div class="button">4</div>
+            <div class="button">5</div>
+            <div class="button">6</div>
+            <div class="symbol">-</div>
+            <div class="button">7</div>
+            <div class="button">8</div>
+            <div class="button">9</div>
+            <div class="symbol">*</div>
+            <div class="buttons">c</div>
+            <div class="button">0</div>
+            <div class="symbol">=</div>
+            <div class="symbol">/</div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Responsive Design</title>
+        <style>
+           .gallery{
+            display: grid;
+            gap: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+           }  
+           .gallery img{
+            width: 100%;
+            height: auto;
+            border-radius: 12px;
+           }
+           nav ul{
+            display: flex;
+            list-style: none;
+            gap: 15px;
+            padding: 0%;
+            margin: ;
+            justify-content: center;
+            background-color: rgb(28, 161, 63);
+           }
+           nav li{
+            color:red;
+            padding: 10px 15px;
+            font-weight: 600;
+            cursor: pointer;
+           }
+           @media (max-width: 600px) {
+            nav ul{
+                flex-direction: column;
+                align-items: center;
+            }
+           }
+           </style>
+    </head>
+    <body>
+        <h1>Responsive Design Notes</h1>
+        <nav>
+            <ul>
+<li>Home</li>
+<li>About</li>
+<li>Services</li>
+<li>Contact</li>
+            </ul>
+        </nav>     
+           <div class="gallery">
+        <img src="tom nd jerry.gif" alt="Tom and Jerry" class="responsive-image">
+        <img src="lion.gif" alt="Lion" class="responsive-image">
+        <img src="road.gif" alt="road" class="responsive-image">
+                <img src="C:\Users\Sarath\Desktop\EmpowerHer\pic.png" alt="pic" class="responsive-image">
+        </div>
+    </body>
+</html>

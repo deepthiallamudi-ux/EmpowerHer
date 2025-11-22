@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Personal Portfolio</title>
+    <link rel="stylesheet" href="day8_styles.css" />
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="nav-container">
+        <div class="nav-logo">Sree Allamudi</div>
+        <div class="hamburger" id="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <ul class="nav-menu" id="navMenu">
+          <li><a href="#home" class="nav-link">Home</a></li>
+          <li><a href="#skills" class="nav-link">Skills</a></li>
+          <li><a href="#projects" class="nav-link">Projects</a></li>
+          <li><a href="#footer" class="nav-link">Contact</a></li>
+          <li><a href="#About" class="nav-link">About</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <section id="home" class="hero">
+      <div class="hero-content">
+        <h1 class="hero-title">Hello, I'm <span class="highlight">Sree Allamudi </span></h1>
+        <p class="hero-subtitle">Creative Web Developer & Designer</p>
+        <p class="hero-description">I build beautiful and functional websites that bring ideas to life. With expertise in modern web technologies and design, I create engaging digital experiences that users love.</p>
+        <a href="#footer" class="cta-button">Contact Me</a>
+      </div>
+    </section>
+
+    <section id="skills" class="skills">
+      <div class="container">
+        <h2 class="section-title">My Skills</h2>
+        <div class="skills-grid">
+          <div class="skill-card">
+            <div class="skill-icon">🎨</div>
+            <h3>UI/UX Design</h3>
+            <p>Creating beautiful, user-friendly interfaces with attention to detail and accessibility</p>
+          </div>
+          <div class="skill-card">
+            <div class="skill-icon">💻</div>
+            <h3>Frontend Development</h3>
+            <p>Building responsive websites with modern HTML, CSS, and JavaScript frameworks</p>
+          </div>
+          <div class="skill-card">
+            <div class="skill-icon">⚙️</div>
+            <h3>Backend Development</h3>
+            <p>Developing robust server-side applications and RESTful APIs</p>
+          </div>
+          <div class="skill-card">
+            <div class="skill-icon">📱</div>
+            <h3>Responsive Design</h3>
+            <p>Ensuring seamless experiences across all devices and screen sizes</p>
+          </div>
+          <div class="skill-card">
+            <div class="skill-icon">🚀</div>
+            <h3>Performance Optimization</h3>
+            <p>Optimizing web applications for speed, efficiency, and better user experience</p>
+          </div>
+          <div class="skill-card">
+            <div class="skill-icon">🔧</div>
+            <h3>Web Technologies</h3>
+            <p>Proficient with React, Vue, Node.js, databases, and modern development tools</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="projects">
+      <div class="container">
+        <h2 class="section-title">Featured Projects</h2>
+        <div class="projects-grid">
+          <div class="project-card">
+            <div class="project-image project-1"></div>
+            <div class="project-content">
+              <h3>E-Commerce Platform</h3>
+              <p>A fully responsive online shopping platform with user authentication and payment integration</p>
+              <div class="project-tags">
+                <span class="tag">HTML</span>
+                <span class="tag">CSS</span>
+                <span class="tag">JavaScript</span>
+              </div>
+            </div>
+          </div>
+          <div class="project-card">
+            <div class="project-image project-2"></div>
+            <div class="project-content">
+              <h3>Portfolio Website</h3>
+              <p>A modern portfolio showcasing creative work with smooth animations and transitions</p>
+              <div class="project-tags">
+                <span class="tag">Design</span>
+                <span class="tag">Responsive</span>
+                <span class="tag">CSS</span>
+              </div>
+            </div>
+          </div>
+          <div class="project-card">
+            <div class="project-image project-3"></div>
+            <div class="project-content">
+              <h3>Weather Dashboard</h3>
+              <p>An interactive weather application displaying real-time weather data and forecasts</p>
+              <div class="project-tags">
+                <span class="tag">API</span>
+                <span class="tag">JavaScript</span>
+                <span class="tag">UI</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer id="footer" class="footer">
+      <div class="container">
+        <h2 class="section-title">Get In Touch</h2>
+        <p class="footer-description">Have a project in mind or just want to say hello? I'd love to hear from you!</p>
+
+        <div class="contact-info">
+          <div class="contact-item">
+            <div class="contact-icon">📧</div>
+            <div>
+              <h4>Email</h4>
+              <p><a href="mailto:alex.morgan@example.com">sree.alla@example.com</a></p>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">📱</div>
+            <div>
+              <h4>Phone</h4>
+              <p><a href="tel:+919561234567">+91 (956) 123-4567</a></p>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">📍</div>
+            <div>
+              <h4>Location</h4>
+              <p>kashmir , India</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="social-links">
+          <a href="#" class="social-link" target="_blank">GitHub</a>
+          <a href="#" class="social-link" target="_blank">LinkedIn</a>
+          <a href="#" class="social-link" target="_blank">Twitter</a>
+          <a href="#" class="social-link" target="_blank">Dribbble</a>
+        </div>
+
+        <div class="footer-bottom">
+          <p>&copy; 2024 sree Allamudi. Made with passion and cheerful colors.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      const hamburger = document.getElementById('hamburger');
+      const navMenu = document.getElementById('navMenu');
+      const navLinks = document.querySelectorAll('.nav-link');
+
+      hamburger.addEventListener('click', () => {
+        navMenu.classList.toggle('active');
+        hamburger.classList.toggle('active');
+      });
+
+      navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+          navMenu.classList.remove('active');
+          hamburger.classList.remove('active');
+        });
+      });
+    </script>
+  </body>
+</html>

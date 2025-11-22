@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coffee Menu Cards</title>
+    <style>
+
+        body {
+            background-color: #f5f1e8;
+            padding: 40px 20px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            max-width: 1100px;
+            width: 100%;
+            justify-items: center;
+            align-items: center;
+        }
+
+        .card-content{
+            background: white;
+            border-radius: 12px;
+           width: 350px;
+            padding: 10px 10px;
+        }
+
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items:center;
+        }
+
+        .name {
+            font-size: 22px;
+            font-weight: 600;
+            color: #2d2d2d;
+        }
+
+        .price {
+            font-size: 22px;
+            font-weight: 600;
+            color: #c39370;
+        }
+
+        .card-description {
+            font-size: 18px;
+            color: #888;
+            line-height: 1.7;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                grid-template-columns: 1fr;
+                gap: 25px;
+            }
+
+            .card-content {
+                padding: 25px 20px;
+            }
+
+            .name {
+                font-size: 18px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 20px 15px;
+            }
+
+            .card-content {
+                padding: 20px 15px;
+            }
+
+            .card-header {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .name {
+                font-size: 16px;
+            }
+
+            .price {
+                font-size: 18px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+                <div class="card-content">
+                    <div class="card-header">
+                        <h2 class="name">Macchiato</h2>
+                        <span class="price">$49</span>
+                    </div>
+                    <p class="card-description">Usage of the Internet is becoming more common due to rapid advance.</p>
+                </div>
+
+            
+                <div class="card-content">
+                    <div class="card-header">
+                        <h2 class="name">Mocha</h2>
+                        <span class="price">$49</span>
+                    </div>
+                    <p class="card-description">Usage of the Internet is becoming more common due to rapid advance.</p>
+                </div>
+
+                <div class="card-content">
+                    <div class="card-header">
+                        <h2 class="name">Piccolo Latte</h2>
+                        <span class="price">$49</span>
+                    </div>
+                    <p class="card-description">Usage of the Internet is becoming more common due to rapid advance.</p>
+                </div>
+          
+                <div class="card-content">
+                    <div class="card-header">
+                        <h2 class="name">Ristretto</h2>
+                        <span class="price">$49</span>
+                    </div>
+                    <p class="card-description">Usage of the Internet is becoming more common due to rapid advance.</p>
+                </div>
+
+            <div class="card-content">
+                    <div class="card-header">
+                        <h2 class="name">Mocha</h2>
+                        <span class="price">$49</span>
+                    </div>
+                    <p class="card-description">Usage of the Internet is becoming more common due to rapid advance.</p>
+                </div>
+                <div class="card-content">
+                    <div class="card-header">
+                        <h2 class="name">Coffe Latte</h2>
+                        <span class="price">$49</span>
+                    </div>
+                    <p class="card-description">Usage of the Internet is becoming more common due to rapid advance.</p>
+                </div>
+                <div class="card-content">
+                    <div class="card-header">
+                        <h2 class="name">Piccolo Latte</h2>
+                        <span class="price">$49</span>
+                    </div>
+                    <p class="card-description">Usage of the Internet is becoming more common due to rapid advance.</p>
+                </div>
+                <div class="card-content">
+                    <div class="card-header">
+                        <h2 class="name">Ristretto</h2>
+                        <span class="price">$49</span>
+                    </div>
+                    <p class="card-description">Usage of the Internet is becoming more common due to rapid advance.</p>
+                </div>
+                <div class="card-content">
+                    <div class="card-header">
+                        <h2 class="name">Affogato</h2>
+                        <span class="price">$49</span>
+                    </div>
+                    <p class="card-description">Usage of the Internet is becoming more common due to rapid advance.</p>
+                </div>
+            </div>
+</body>
+</html>
+
+
+                
