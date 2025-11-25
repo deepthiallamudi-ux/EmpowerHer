@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Class Manipulation</title>
+</head>
+<body>
+    <p class="normal">Hello, World!</p>
+    <p class="normal">Welcome to DOM Class Manipulation</p>
+    <p class="normal">This is a paragraph with the normal class.</p>
+    <button onclick="changeColor()">Change Color</button>
+
+    <button>HI</button>
+    <button>bye</button>
+    <button>See u again</button>
+    <button onclick="styleButtons()">Style Buttons</button>
+
+    <script>
+        function changeColor() {
+            let item=document.getElementsByClassName("normal");
+            for(let i=0; i<item.length; i++) {
+                item[i].style.color = "pink";
+            }
+        }
+        function styleButtons() {
+            let buttons = document.getElementsByTagName("button");
+            for(let i of buttons) {
+                i.style.backgroundColor = "olive";
+                i.style.border = "2px solid blue";
+                i.style.color = "darkblue";
+                i.style.padding = "10px";
+                i.style.margin = "5px";
+            }
+        }
+    </script>
+</body>
+</html>

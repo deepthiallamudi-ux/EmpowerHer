@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Dom(document object memory) is a browsers way of understNDING html document. 
+     it sees whole html doc as a object.Understand html as a tree structure
+     html(root tag) -->
+    <meta charset="UTF-8">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document Object Model (DOM)</title> 
+    <style>
+        .dark-mode {
+            background-color: #121212;
+            color: #ffffff;
+        } 
+    </style>
+</head>
+<body>
+<h1 id="bleh">vagdevi is distrubing me</h1>
+<button onclick="changeText()">click me</button>
+    <div id="box" style="width: 100px; height: 100px;background-color: crimson;">  </div>
+    <button onclick="hideBox()">Hide</button>
+    <button onclick="showBox()">show</button>
+    <button onclick="countClicks()">Click me for count</button>
+    <p id="clickCount">count:0</p>
+    <button onclick="ToggleDark()">Toggle Dark Mode</button>
+    </body> 
+    <script>
+        function changeText() {
+            document.getElementById("bleh").textContent = "vagdevi slept!";
+        }
+
+        function hideBox() {
+            document.getElementById("box").style.display = "none";
+        }
+        function showBox() {
+            document.getElementById("box").style.display = "block";
+        }
+        console.log("i became gajini")
+        let count = 0;
+        function countClicks() {
+            count++;
+            document.getElementById("clickCount").textContent = "count:" + count;
+        }
+        function ToggleDark() {
+            document.body.classList.toggle("dark-mode");
+        }
+        console.log(document);
+       // document.body.style.backgroundColor = "palegoldenrod";
+        document.body.style.fontFamily = "Arial, sans-serif";
+        // anythinh inside DOM tree is node
+
+ </script>
+</html>
