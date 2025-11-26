@@ -26,7 +26,7 @@ setTimeout(() => { console.log("Timeout Task"); }, 0);
     console.log("Promise Task"); }); 
      console.log("End");
 
-   5  //question 15
+//question 15
      function startCountdown() {
   let seconds = prompt("Enter the number of seconds to count down:");
 
