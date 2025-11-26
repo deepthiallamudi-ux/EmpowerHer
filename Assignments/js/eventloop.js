@@ -17,3 +17,34 @@ setTimeout( () =>{
     console.log("Loaded successfully!");
 }, 5000);
 
+
+// question 14
+
+console.log("Begin"); 
+setTimeout(() => { console.log("Timeout Task"); }, 0);
+     Promise.resolve().then(() => { 
+    console.log("Promise Task"); }); 
+     console.log("End");
+
+   5  //question 15
+     function startCountdown() {
+  let seconds = prompt("Enter the number of seconds to count down:");
+
+  let countdownInterval;
+  let keyCheckTimeout;
+
+  const countdownLogic = () => {
+    if (seconds > 0) {
+      console.log(`Remaining time: ${seconds} seconds`);
+      seconds--;
+    } else {
+      clearInterval(countdownInterval);
+      clearTimeout(keyCheckTimeout);
+      console.log("Countdown Complete!");
+    }
+  };
+
+  countdownInterval = setInterval(countdownLogic, 1000);
+}
+
+startCountdown();
