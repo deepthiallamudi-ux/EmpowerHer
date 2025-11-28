@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+   <title>Login Page</title>
+   <body>
+      <h1>Login</h1>
+      <input type="text" id="username" placeholder="Username"><br><br>
+      <input type="password" id="password" placeholder="Password"><br><br>
+      <button onclick="login()">Login</button>
+      <p id="message"></p>
+      <script>
+        function login() {
+            let username = document.getElementById('username').value;
+            let password = document.getElementById('password').value;
+            window.location.href = "home.html";
+            const message = document.getElementById('message');
+            if(username === '' || password === '') {
+                // document.getElementById(message)
+                // innerHTML.message="blsgfh"
+                message.textContent = 'Please enter both username and password.';
+                message.style.color = 'red';
+                return;
+            }
+
+           else if (username === 'admin' && password === 'password123') {
+                message.textContent = 'Login successful!';
+                message.style.color = 'green';
+            } else {
+                message.textContent = 'Invalid username or password.';
+                message.style.color = 'red';
+            }
+        }
+      </script>
+      </body>   

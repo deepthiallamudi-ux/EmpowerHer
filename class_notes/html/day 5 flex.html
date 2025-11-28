@@ -5,8 +5,17 @@
 .container{
     background: darkblue ;
     padding: 10px;
-    display: flex;
-   
+    display:flex;
+    flex-direction: row-reverse;
+   /* justify-content: flex-start; */
+justify-content: flex-end;
+justify-content: space-between;
+justify-content: space-around;
+
+/* flex-wrap: nowrap;      default */
+/* flex-wrap: wrap;        move items to new line */
+flex-wrap: wrap-reverse;/* reverse wrap */
+
 }
 .Item1{
     background: chartreuse;

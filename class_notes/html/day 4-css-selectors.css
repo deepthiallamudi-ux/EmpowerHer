@@ -28,16 +28,21 @@
       font-style: italic;
       }
       button{
-       background-color: coral;
+       background-color: rgb(182, 66, 24);
        color: white;
        border: none;
        padding: 10px 20px;
        cursor: pointer;
+       
       }
       .btn{
        background-color: teal;
+       transition: background-color 0.3s ease;
       }
-      button:hover{
+      /* .btn:hover{
+         background-color: darkorange;
+         } */
+       button:hover{
          background-color: darkorange;
          }
 

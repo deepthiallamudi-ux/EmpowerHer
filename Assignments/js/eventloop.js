@@ -26,25 +26,26 @@ setTimeout(() => { console.log("Timeout Task"); }, 0);
     console.log("Promise Task"); }); 
      console.log("End");
 
-//question 15
-     function startCountdown() {
-  let seconds = prompt("Enter the number of seconds to count down:");
+//question 15 - Countdown Timer with setInterval
 
-  let countdownInterval;
-  let keyCheckTimeout;
 
-  const countdownLogic = () => {
+function startCountdown() {
+  
+  let seconds = \ 
+  console.log(`\n=== Countdown Timer Started (${seconds} seconds) ===\n`);
+
+  // Use setInterval to display remaining time every second
+  const countdownInterval = setInterval(() => {
     if (seconds > 0) {
-      console.log(`Remaining time: ${seconds} seconds`);
+      console.log(`⏱️  Remaining time: ${seconds} seconds`);
       seconds--;
     } else {
+      // When countdown reaches zero, stop the timer and print completion message
       clearInterval(countdownInterval);
-      clearTimeout(keyCheckTimeout);
-      console.log("Countdown Complete!");
+      console.log("\n✅ Countdown Complete!\n");
     }
-  };
-
-  countdownInterval = setInterval(countdownLogic, 1000);
+  }, 1000);
 }
 
+// Run the countdown
 startCountdown();

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Table Example</title>
+    </head> 
+    <body>
+        <div class="container">
+            <h1> student data</h1>
+            <form method="post" name="sam">
+                <br>
+                Roll No: <input type="number" name="rollno" id="rollno"> <br><br>
+                Name: <input type="text" name="name" id="name"> <br><br>
+                <input type="button" name="addStudent" value="Add Student" 
+                onclick="addstudent();" class="btn-success">
+                <hr>
+            <table border="1" id="studentTable" class="table">
+                <thead>
+                    <th>Roll No</th>
+                    <th>Name</th>   
+                    <!-- <th>delete</th>
+                    <th>update</th> -->
+                </thead>
+                </table>
+                 </form> 
+         </div>
+        <script>
+            function addstudent() {
+                var rollno=document.sam.rollno.value;
+                var name=document.sam.name.value;
+                var tr=document.createElement("tr");
+                var td1=tr.appendChild(document.createElement("td"));
+                var td2=tr.appendChild(document.createElement("td"));
+                // var td3=tr.appendChild(document.createElement("td"));
+                // var td4=tr.appendChild(document.createElement("td"));
+                td1.innerHTML=rollno;
+                td2.innerHTML=name;
+                // td1.innerHTML='<input type="number" name="rollno" value="'+rollno+'">';
+                // td2.innerHTML='<input type="text" name="name" value="'+name+'">';
+                // td3.innerHTML='<input type="button" name="delete" onclick="deletestudent(this);" value="delete" class="btn-danger">';
+                // td4.innerHTML='<input type="button" name="update" onclick="updatestudent(this);" value="update" class="btn-primary">';
+                //document.getElementById("studentTable").replaceChild(tr,s);
+                document.getElementById("studentTable").appendChild(tr);
+                }
+        </script>
+    </body>

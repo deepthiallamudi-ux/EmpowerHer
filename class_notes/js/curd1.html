@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+    <body>
+    <h2>form</h2>
+    <input type="text" id="name">
+    <button onclick="saveData()">save the data</button>
+    <p id="msg"></p>
+    <h2>List</h2>
+    <table border="1">
+        <thead>
+            <tr>
+                <td>No.</td>
+                <td>Name</td>
+                <td>Action</td>
+            </tr>
+        </thead>
+        <tbody id="root"> </tbody>
+    </table>
+    </body>
+    <script>
+        let index=-1
+showData();
+
+function saveData(){
+    let n=document.getElementById("name").value;
+    if(n===""){
+        document.getElementById("msg").innerHTML="PLEASE ENTER NAME";
+        return;
+    }
+    let d=JSON.parse(localStorage.getItem("list")) || [];
+    if(index===-1){
+        d.push(n);
+        document.getElementById("msg").innerHTML="add values";
+    }
+    else{
+        d[index]=n;
+        document.getElementById("msg").innerHTML="dsta updated";
+        index=-1
+    }
+    localStorage.setItem("list",JSON.stringify(d));
+    document.getElementById("name").value="";
+    showData();
+}
+function showData(){
+    let d=JSON.parse(localStorage.getItem("list")) || [];
+    let html="";
+    for(let i=0; i<d.length;i++){
+        html+=`<tr>
+            <td>${i+1}</td>
+            <td>${d[i]}</td>
+            <td>
+                <button onclick="editData($(i))">edit</button>
+                <button onclick="delData($(i))">delete</button>
+                </td>
+                </tr>`;
+    }
+document.getElementById("root").innerHTML=html;
+}
+//edit nd updatedata fuction
+    </script>

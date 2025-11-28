@@ -6,7 +6,7 @@ div.inner{
     position: relative;
 }
 .box{
-    border: 10px solid rgb(0, 0, 255);
+    border: 10px groove rgb(0, 0, 255);
     margin: 20px;
     padding: 10px;
     background-color: rgb(230, 66, 12);
