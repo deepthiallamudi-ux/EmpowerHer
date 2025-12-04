@@ -27,8 +27,7 @@ const obj = {
 obj.test();
 // aroow function doesnt aceept this keyword//
 
-const objnew = {
-  value: 50,
+const objnew = {  value: 50,
   test: function() {
     console.log( this.value);
   }

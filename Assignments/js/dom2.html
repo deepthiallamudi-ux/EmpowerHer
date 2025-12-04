@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Assignment1 --Ques 12</title>
+        
+    </head>
+    <body>
+        <ul id="list"> 
+            <li>ram</li>
+            <li>sita</li>
+            <li>laxman</li>
+        </ul>
+        <button onclick="addItem()">Add Item</button>
+    </body>
+    <script>
+        function addItem(){
+            let ul= document.querySelector("ul");
+            let li= document.createElement("li");
+            li.textContent="hanuman";
+            ul.appendChild(li);
+          
+        const index = ul.children.length; 
+
+    if (index % 2 === 1) {
+        // odd
+        li.style.fontWeight = "bold";
+        li.style.color = "blue";
+    } else {
+        // even
+        li.style.fontStyle = "italic";
+        li.style.color = "red";
+    }
+}    
+    </script>
