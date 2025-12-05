@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo List App</title>
+     bnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn</head>
+<body>
+    <div class="container">
+        <h1>Todo List</h1>
+        
+        <!-- Input section to add tasks -->
+        <div class="input-box">
+            <input type="text" id="taskInput" placeholder="Enter a task">
+            <button onclick="addTask()">Add</button>
+        </div>
+        
+        <!-- Search section to find tasks -->
+        <div class="search-box">
+            <input type="text" id="searchInput" placeholder="Search tasks" oninput="searchTasks()">
+        </div>
+        
+        <!-- Task list where all tasks will show -->
+        <div class="task-list" id="taskList">
+            <div class="empty-msg">No tasks yet</div>
+        </div>
+        
+        <!-- Clear all button -->
+        <button class="clear-btn" onclick="clearAll()">Clear All Tasks</button>
+    </div>
+
+    <script>
+        // Storage key for saving tasks in localStorage
+        const STORAGE_KEY = 'myTasks';
+        
+        // Reference to input field
+        const taskInput = document.getElementById('taskInput');
+        
+        // Reference to search field
+        const searchInput = document.getElementById('searchInput');
+        
+        // Reference to task list container
+        const taskList = document.getElementById('taskList');
+        
+        // Array to store all tasks
+        let allTasks = [];
+        
+        // Array to store filtered tasks when searching
+        let displayTasks = [];
+        
+        // ==================== LOAD TASKS FROM STORAGE ====================
+        // Function to load saved tasks when page opens
+        function loadTasks() {
+            // Get tasks from localStorage
+            let saved = localStorage.getItem(STORAGE_KEY);
+            
+            // Check if tasks exist
+            if (saved !== null) {
+                // Convert JSON string back to array
+                allTasks = JSON.parse(saved);
+            } else {
+                // If no tasks saved, start with empty array
+                allTasks = [];
+            }
+            
+            // Copy all tasks to display array (show everything at first)
+            displayTasks = [...allTasks];
+            
+            // Show all tasks on screen
+            showTasks();
+        }
+        
+        // ==================== SAVE TASKS TO STORAGE ====================
+        // Function to save tasks to localStorage
+        function saveTasks() {
+            // Convert array to JSON string
+            let json = JSON.stringify(allTasks);
+            
+            // Save to localStorage
+            localStorage.setItem(STORAGE_KEY, json);
+        }
+        
+        // ==================== ADD NEW TASK ====================
+        // Function to add a new task
+        function addTask() {
+            // Get text from input field
+            let text = taskInput.value.trim();
+            
+            // Check if input is empty
+            if (text === '') {
+                alert('Please enter a task!');
+                return;
+            }
+            
+            // Create new task object with id, text, and completed status
+            let newTask = {
+                id: Date.now(),      // Unique ID using current time
+                text: text,          // Task description
+                completed: false     // Not completed at first
+            };
+            
+            // Add task to array
+            allTasks.push(newTask);
+            
+            // Save to localStorage
+            saveTasks();
+            
+            // Clear input field
+            taskInput.value = '';
+            
+            // Update display array
+            displayTasks = [...allTasks];
+            
+            // Show tasks on screen
+            showTasks();
+        }
+        
+        // ==================== TOGGLE TASK COMPLETION ====================
+        // Function to mark task as completed or not
+        function toggleTask(id) {
+            // Find task with this id
+            for (let i = 0; i < allTasks.length; i++) {
+                if (allTasks[i].id === id) {
+                    // Toggle completed status
+                    allTasks[i].completed = !allTasks[i].completed;
+                    break;
+                }
+            }
+            
+            // Save changes
+            saveTasks();
+            
+            // Update display
+            showTasks();
+        }
+        
+        // ==================== DELETE A TASK ====================
+        // Function to remove a task
+        function deleteTask(id) {
+            // Ask for confirmation
+            if (confirm('Delete this task?')) {
+                // Loop through all tasks
+                for (let i = 0; i < allTasks.length; i++) {
+                    // If found matching id, remove it
+                    if (allTasks[i].id === id) {
+                        allTasks.splice(i, 1);
+                        break;
+                    }
+                }
+                
+                // Save changes
+                saveTasks();
+                
+                // Search again if user was searching
+                searchTasks();
+            }
+        }
+        
+        // ==================== SEARCH TASKS ====================
+        // Function to filter tasks based on search
+        function searchTasks() {
+            // Get search text
+            let search = searchInput.value.trim().toLowerCase();
+            
+            // If search is empty, show all tasks
+            if (search === '') {
+                displayTasks = [...allTasks];
+            } else {
+                // Filter tasks that contain search text
+                displayTasks = [];
+                for (let i = 0; i < allTasks.length; i++) {
+                    // Check if task text contains search text
+                    if (allTasks[i].text.toLowerCase().includes(search)) {
+                        displayTasks.push(allTasks[i]);
+                    }
+                }
+            }
+            
+            // Show filtered tasks
+            showTasks();
+        }
+        
+        // ==================== DISPLAY TASKS ====================
+        // Function to show tasks on screen
+        function showTasks() {
+            // Clear task list
+            taskList.innerHTML = '';
+            
+            // Check if there are tasks to show
+            if (displayTasks.length === 0) {
+                // Show empty message
+                taskList.innerHTML = '<div class="empty-msg">No tasks to show</div>';
+                return;
+            }
+            
+            // Loop through each task and create HTML
+            for (let i = 0; i < displayTasks.length; i++) {
+                let task = displayTasks[i];
+                
+                // Create div for task
+                let taskDiv = document.createElement('div');
+                
+                // Add class based on completed status
+                if (task.completed) {
+                    taskDiv.className = 'task-item completed';
+                } else {
+                    taskDiv.className = 'task-item';
+                }
+                
+                // Create HTML for task with checkbox, text, and delete button
+                taskDiv.innerHTML = `
+                    <input type="checkbox" class="checkbox" ${task.completed ? 'checked' : ''} onchange="toggleTask(${task.id})">
+                    <span class="task-text">${task.text}</span>
+                    <button class="delete-btn" onclick="deleteTask(${task.id})">Delete</button>
+                `;
+                
+                // Add task to list
+                taskList.appendChild(taskDiv);
+            }
+        }
+        
+        // ==================== CLEAR ALL TASKS ====================
+        // Function to delete all tasks
+        function clearAll() {
+            // Ask for confirmation
+            if (confirm('Delete ALL tasks?')) {
+                // Empty the array
+                allTasks = [];
+                displayTasks = [];
+                
+                // Remove from storage
+                localStorage.removeItem(STORAGE_KEY);
+                
+                // Clear search
+                searchInput.value = '';
+                
+                // Update display
+                showTasks();
+                
+                alert('All tasks deleted!');
+            }
+        }
+        
+        // ==================== RUN ON PAGE LOAD ====================
+        // Load tasks when page opens
+        loadTasks();
+    </script>
+</body>
+</html>
+
