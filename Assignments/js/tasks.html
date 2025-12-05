@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Front& backend communication</title>
+</head>
+<body>
+    <h1>Firebase Example</h1>
+        <button id="getBtn" onclick="getData()">Get Data</button>
+    <button id="deleteBtn" onclick="deleteData()">Delete Data</button>
+    <div id="todosContainer"></div>
+    </body> 
+    
+<script>
+    const STORAGE_KEY = "todos";
+    const container = document.getElementById("todosContainer");
+    function getData(){
+    fetch('https://jsonplaceholder.typicode.com/todos',{
+        method:"GET"
+    })
+    .then(response => response.json())
+    .then((data)=>{
+       const todo20 = localStorage.setItem("todos",JSON.stringify(data.slice(0,20)));
+        //  console.log("Data retrieved:",data.slice(0,20))
+        renderTodos(todo20);
+    })
+    .catch((err)=>{console.log("Error retrieving data:",err);
+    });
+}
+function renderTodos(todosArray) {
+        container.innerHTML = ""; // clear UI
+
+        todosArray.forEach((todo, index) => {
+
+            const div = document.createElement("div");
+            div.style.border = "1px solid black";
+            div.style.margin = "10px 0";
+            div.style.padding = "10px";
+
+            div.innerHTML = `
+                <p><strong>Title:</strong> ${todo.title}</p>
+                <p><strong>Completed:</strong> ${todo.completed}</p>
+                <button onclick="deleteTodo(${index})">Delete</button>
+            `;
+
+            container.appendChild(div);
+        });
+    }
+function deleteTodo(index) {
+        let stored = localStorage.getItem(STORAGE_KEY);
+        let todos = stored ? JSON.parse(stored) : [];
+
+        todos.splice(index, 1); // remove selected todo
+
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(todos));
+
+        renderTodos(todos); // update UI instantly
+    }
+
+    // ------------ 4. AUTO-LOAD TODOS ON PAGE LOAD ------------
+    let savedTodos = localStorage.getItem(STORAGE_KEY);
+    if (savedTodos) {
+        renderTodos(JSON.parse(savedTodos));
+    }
+
+</script>
+</html>

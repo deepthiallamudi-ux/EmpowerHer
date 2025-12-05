@@ -28,7 +28,7 @@ function getData(){
     });
 }
 
-
+//update
 function updateData(){
     fetch('https://masai-9b8ce-default-rtdb.firebaseio.com/data/-OfV5Y6s0GteqlvZMpVQ .json',{
        method:"PUT",
