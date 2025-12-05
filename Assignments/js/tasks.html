@@ -14,25 +14,12 @@
     </body> 
 
 <script>
-    const STORAGE_KEY = "todos";
-    const container = document.getElementById("todosContainer");
-    function getData(){
-    fetch('https://jsonplaceholder.typicode.com/todos',{
-        method:"GET"
-    })
-    .then(response => response.json())
-    .then((data)=>{
-       const todo20 = localStorage.setItem("todos",JSON.stringify(data.slice(0,20)));
-        //  console.log("Data retrieved:",data.slice(0,20))
-        renderTodos(todo20);
-    })
-    .catch((err)=>{console.log("Error retrieving data:",err);
-    });
-}
-function renderTodos(todosArray) {
+    // const STORAGE_KEY = "todos";
+    function renderTodos(todosArray) {
         container.innerHTML = ""; // clear UI
-
-        todosArray.forEach((todo, index) => {
+   console.log(typeof todosArray);
+   
+        todosArray.map((todo, index) => {
 
             const div = document.createElement("div");
             div.style.border = "1px solid black";
@@ -48,6 +35,22 @@ function renderTodos(todosArray) {
             container.appendChild(div);
         });
     }
+    const container = document.getElementById("todosContainer");
+    function getData(){
+    fetch('https://jsonplaceholder.typicode.com/todos',{
+        method:"GET"
+    })
+    .then(response => response.json())
+    .then((data)=>{
+       const todo20 = data.slice(0,20);
+        localStorage.setItem("todos",JSON.stringify(data.slice(0,20)));
+        //  console.log("Data retrieved:",data.slice(0,20))
+        renderTodos(todo20);
+    })
+    .catch((err)=>{console.log("Error retrieving data:",err);
+    });
+}
+
 function deleteTodo(index) {
         let stored = localStorage.getItem(STORAGE_KEY);
         let todos = stored ? JSON.parse(stored) : [];
