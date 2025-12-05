@@ -12,7 +12,7 @@
     <button id="deleteBtn" onclick="deleteData()">Delete Data</button>
     <div id="todosContainer"></div>
     </body> 
-    
+
 <script>
     const STORAGE_KEY = "todos";
     const container = document.getElementById("todosContainer");
@@ -59,11 +59,11 @@ function deleteTodo(index) {
         renderTodos(todos); // update UI instantly
     }
 
-    // ------------ 4. AUTO-LOAD TODOS ON PAGE LOAD ------------
-    let savedTodos = localStorage.getItem(STORAGE_KEY);
-    if (savedTodos) {
-        renderTodos(JSON.parse(savedTodos));
-    }
+    // // ------------ 4. AUTO-LOAD TODOS ON PAGE LOAD ------------
+    // let savedTodos = localStorage.getItem(STORAGE_KEY);
+    // if (savedTodos) {
+    //     renderTodos(JSON.parse(savedTodos));
+    // }
 
 </script>
 </html>
