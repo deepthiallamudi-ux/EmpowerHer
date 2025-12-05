@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Local Storage Example</title>
+</head>
+<body>
+  
+    <h1>Creating and Removing Elements</h1>
+      <div id="container"></div>
+      <button id="createBtn" onclick="addpara()">Add paragraph</button>
+        <button id="removeBtn" onclick="removepara()">Remove last paragraph</button>
+
+<script>
+// Function to add a new paragraph to the container
+function addpara(){
+    // Get the container div element using its ID "container"
+    let ele=document.getElementById("container");
+    
+    // Create a new paragraph (<p>) element in memory (not yet added to the page)
+    let para =document.createElement("p");
+    
+    // Set the text content of the paragraph to display
+    para.textContent="This is a new paragraph.";
+    
+    // Add/append the paragraph as a child element inside the container div
+    ele.appendChild(para);
+}
+
+// Function to remove the last paragraph from the container
+function removepara(){
+    // Get the container div element using its ID "container"
+    let ele=document.getElementById("container");
+    
+    // Get all <p> (paragraph) elements inside the container and store them in an array-like collection
+    para=ele.getElementsByTagName("p");
+    
+    // Check if there is at least one paragraph to remove (length > 0 means paragraphs exist)
+    if(para.length>0){
+        // Remove the last paragraph from the container
+        // para[para.length-1] gets the last item in the collection (index starts at 0)
+        ele.removeChild(para[para.length-1]);
+    }
+    // End of if statement
+}
+</script>
+</body>
+</html>

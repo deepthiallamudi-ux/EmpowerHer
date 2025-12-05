@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notes App</title>
+</head>
+<body>
+
+    <h2>Notes App</h2>
+
+    <textarea id="notesArea" rows="8" cols="60" placeholder="Write your notes here..."></textarea>
+    <br><br>
+
+    <button onclick="loadNotes()">Load Notes</button>
+    <button onclick="saveNotes()">Save Notes</button>
+    <button onclick="clearNotes()">Clear Notes</button>
+
+    <h3>Loaded Notes:</h3>
+    <div id="displayArea"></div>
+
+<script>
+
+    // ==================== CONSTANTS AND DOM REFERENCES ====================
+    // Define the key name used to store notes in browser's localStorage
+    const STORAGE_KEY = "notes";
+    
+    // Get reference to the textarea element where user enters notes
+    const notesArea = document.getElementById("notesArea");
+    
+    // Get reference to the div where saved notes will be displayed
+    const displayArea = document.getElementById("displayArea");
+
+    // ==================== AUTO-LOAD ON PAGE LOAD ====================
+    // Retrieve saved notes from localStorage when page loads (NO event listeners)
+    let saved = localStorage.getItem(STORAGE_KEY);
+    
+    // Check if notes exist in localStorage
+    if (saved !== null) {
+        // If notes found, display them in textarea
+        notesArea.value = saved;
+        // Also display them in the display area below
+        displayArea.innerText = saved;
+    }
+
+    // ==================== LOAD NOTES FUNCTION ====================
+    // Function to manually load notes from localStorage
+    function loadNotes() {
+        // Retrieve notes from localStorage using STORAGE_KEY
+        let data = localStorage.getItem(STORAGE_KEY);
+
+        // Check if data exists in localStorage
+        if (data !== null) {
+            // If found, display notes in the textarea for editing
+            notesArea.value = data;
+            // Also display notes in the display area
+            displayArea.innerText = data;
+            // Show success message to user
+            alert("Notes loaded!");
+        } else {
+            // If no notes found, clear display area
+            displayArea.innerText = "";
+            // Show "not found" message
+            alert("No notes found!");
+        }
+    }
+
+    // ==================== SAVE NOTES FUNCTION ====================
+    // Function to save notes from textarea to localStorage
+    function saveNotes() {
+        // Get text from textarea and remove leading/trailing whitespace
+        let text = notesArea.value.trim();
+
+        // Validate: check if textarea is empty after trimming
+        if (text === "") {
+            // Show error if trying to save empty notes
+            alert("Cannot save empty notes!");
+            // Exit function without saving
+            return;
+        }
+
+        // Store the notes in browser's localStorage
+        // Using STORAGE_KEY as identifier
+        localStorage.setItem(STORAGE_KEY, notesArea.value);
+        // Display the saved notes in the display area
+        displayArea.innerText = notesArea.value;
+        // Show success message to user
+        alert("Notes saved!");
+    }
+
+    // ==================== CLEAR NOTES FUNCTION ====================
+    // Function to delete all saved notes from localStorage
+    function clearNotes() {
+        // Remove notes from localStorage using STORAGE_KEY
+        localStorage.removeItem(STORAGE_KEY);
+        // Clear the textarea by setting value to empty string
+        notesArea.value = "";
+    
+        // Show confirmation message to user
+        alert("Notes cleared!");
+    }
+
+</script>
+
+</body>
+</html>
