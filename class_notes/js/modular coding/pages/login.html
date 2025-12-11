@@ -1,26 +1,28 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login page</title>
-</head>
+<html>
+<head><title>Login</title></head>
 <body>
-    <h2>Login Page</h2>
-    <form id="loginForm">
-        <label for="username">Username:</label>
-        <input type="text" id="username" name="username" required>
-        <br><br>
-        <label for="password">Password:</label>
-        <input type="password" id="password" name="password" required>
-        <br><br>
-        <button type="button" onclick="submitLogin()">Login</button>
-    </form>
-<script>
-    window.submitLogin = function() {
-        alert("Login successful!");
-        window.location.href = "./todos.html";
+<div id="navbar"></div>
+Login
+<div id="error" style="display:none;color:red"></div>
+<input type="text" id="username" placeholder="Username">
+<input type="password" id="password" placeholder="Password">
+<button onclick="handleLogin()">Login</button>
+<a href="./signup.html">Sign up</a>
+<div id="footer"></div>
+<script type="module">
+import { navbar } from '../navbar.js';
+import { footer } from '../footer.js';
+document.getElementById('navbar').innerHTML = navbar();
+document.getElementById('footer').innerHTML = footer();
+window.handleLogin = function() {
+    const username = document.getElementById('username').value;
+    const password = document.getElementById('password').value;
+    if (username === 'demo' && password === 'demo123') {
+        localStorage.setItem('currentUser', 'Demo User');
+        window.location.href = './todos.html';
     }
+}
 </script>
 </body>
 </html>

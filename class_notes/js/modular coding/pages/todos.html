@@ -1,7 +1,22 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CRUD Operations</title>
+<html>
+    <head>
+<body>
+<div id="navbar"></div>
+Your Todos
+<div id="loading">Loading...</div>
+<div id="error" style="display:none;color:red"></div>
+<div id="todosContainer" style="display:none"></div>
+<div id="footer"></div>
+<script type="module">
+import { navbar } from '../navbar.js';
+import { footer } from '../footer.js';
+import { fetchAndDisplayTodos, checkAuth } from './todos.js';
+document.getElementById('navbar').innerHTML = navbar();
+document.getElementById('footer').innerHTML = footer();
+if (checkAuth()) {
+    fetchAndDisplayTodos();
+}
+</script>
+</body>
 </html>

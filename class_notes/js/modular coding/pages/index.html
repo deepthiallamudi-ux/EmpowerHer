@@ -1,13 +1,19 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>home Page</title>
-</head>
-<body>
-    <h2>Home Page</h2>
-    <p>Welcome to the Home Page!</p>
-    
-</body>
-</html>
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <title>Todo App</title>
+    </head>
+    <body>
+    <div id="navbar"></div>
+    Welcome to Todo App
+    <a href="./signup.html">Get Started</a>
+    <a href="./login.html">Login</a>
+    <div id="footer"></div>
+    <script type="module">
+    import { navbar } from '../navbar.js';
+    import { footer } from '../footer.js';
+    document.getElementById('navbar').innerHTML = navbar();
+    document.getElementById('footer').innerHTML = footer();
+    </script>
+    </body>
+    </html>
